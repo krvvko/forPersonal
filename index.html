@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Hanken Grotesk', sans-serif;
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #inputF {
+            background-color: #2d2d2d;
+            color: aliceblue;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<textarea type="text" onchange="changeF()" id="inputF" contenteditable="true">
+meow
+</textarea>
+<span id="counter"></span>
+<span id="left"></span>
+
+<script>
+    let input;
+    let counter = document.getElementById("counter");
+    let left = document.getElementById("left");
+    function changeF() {
+        input = document.getElementById("inputF").value;
+        counter.innerText = "Символов: "+input.length;
+        left.innerText = "Осталось: "+ (150 - input.length);
+    }
+</script>
+
+</body>
+</html>
+
